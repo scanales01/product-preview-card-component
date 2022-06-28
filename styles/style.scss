@@ -13,22 +13,21 @@
   }
 }
 
-.wrapper {
+body {
   background-color: $bg-color;
-  width: 1440px;
-  height: 800px;
-  display: flex;
-  position: absolute;
-  top: 0; bottom: 0; left: 0; right: 0;
-  margin: auto;
+  position: relative;
+  height: 100vh;
 }
 
 .card {
   background-color: $card-bg-color;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 10px;
   width: 41.6%;
   height: 56.25%;
-  margin: auto;
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -38,6 +37,7 @@
 // preview
 .preview {
   max-width: 50%;
+  flex-grow: 1;
 }
 
 .preview .product {
@@ -48,14 +48,15 @@
 // content
 .card > .content {
   max-width: 50%;
-  padding: 5% 4%;
+  flex-grow: 1;
+  padding: 1rem 1.75rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 
   .type {
     @include textType('sans');
-    font-size: 12px;
+    font-size: .75em;
     line-height: 15px;
     letter-spacing: 5px;
     text-transform: uppercase;
@@ -64,14 +65,14 @@
 
   .name {
     @include textType('serif');
-    font-size: 32px;
+    font-size: 2em;
     line-height: 32px;
     color: $primary-dark; 
   }
 
   .description {
     @include textType('sans');
-    font-size: 14px;
+    font-size: .875em;
     line-height: 23px;
     color: $primary-light;
   }
@@ -97,14 +98,14 @@
 
   .current {
     @include textType('serif');
-    font-size: 32px;
+    font-size: 2em;
     line-height: 32px;
     color: $accent;
   }
 
   .original {
     @include textType('sans');
-    font-size: 13px;
+    font-size: .815em;
     line-height: 23px;
     text-decoration: line-through;
     color: $primary-light;

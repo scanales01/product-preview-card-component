@@ -4,25 +4,21 @@
   padding: 0;
 }
 
-.wrapper {
+body {
   background-color: #F2EAE2;
-  width: 1440px;
-  height: 800px;
-  display: flex;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+  position: relative;
+  height: 100vh;
 }
 
 .card {
   background-color: #FFFFFF;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 10px;
   width: 41.6%;
   height: 56.25%;
-  margin: auto;
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -31,6 +27,7 @@
 
 .preview {
   max-width: 50%;
+  flex-grow: 1;
 }
 
 .preview .product {
@@ -40,7 +37,8 @@
 
 .card > .content {
   max-width: 50%;
-  padding: 5% 4%;
+  flex-grow: 1;
+  padding: 1rem 1.75rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -49,7 +47,7 @@
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 0.75em;
   line-height: 15px;
   letter-spacing: 5px;
   text-transform: uppercase;
@@ -59,7 +57,7 @@
   font-family: "Fraunces", serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 2em;
   line-height: 32px;
   color: #1C232B;
 }
@@ -67,7 +65,7 @@
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 0.875em;
   line-height: 23px;
   color: #6C7289;
 }
@@ -95,7 +93,7 @@
   font-family: "Fraunces", serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 2em;
   line-height: 32px;
   color: #3D8168;
 }
@@ -103,7 +101,7 @@
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 13px;
+  font-size: 0.815em;
   line-height: 23px;
   text-decoration: line-through;
   color: #6C7289;
