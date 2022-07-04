@@ -39,6 +39,4 @@ Users should be able to:
 - Flexbox
 
 ## Author
-
-- Website - [Sebastian Canales](https://www.your-site.com)
 - Frontend Mentor - [@scanales01](https://www.frontendmentor.io/profile/scanales01)
