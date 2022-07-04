@@ -11,39 +11,38 @@ body {
 }
 
 .card {
+  cursor: default;
   background-color: #FFFFFF;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 10px;
   width: 600px;
   height: 450px;
+  border-radius: 10px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  justify-content: center;
 }
-
-.preview {
-  max-width: 50%;
-  flex-grow: 1;
-}
-
-.preview .product {
-  width: 100%;
+.card .container {
+  width: 50%;
   height: 100%;
 }
-
-.card > .content {
-  max-width: 50%;
-  flex-grow: 1;
+.card .content {
   padding: 32px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
-.card > .content .type {
+
+#main-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-image: url(../images/image-product-desktop.jpg);
+}
+
+.type {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -53,7 +52,8 @@ body {
   text-transform: uppercase;
   color: #6C7289;
 }
-.card > .content .name {
+
+.name {
   font-family: "Fraunces", serif;
   font-style: normal;
   font-weight: 700;
@@ -61,7 +61,8 @@ body {
   line-height: 32px;
   color: #1C232B;
 }
-.card > .content .description {
+
+.description {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -69,7 +70,8 @@ body {
   line-height: 23px;
   color: #6C7289;
 }
-.card > .content .button {
+
+.button {
   width: 236px;
   height: 48px;
   background-color: #3D8168;
@@ -78,16 +80,27 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  -moz-column-gap: 16px;
-       column-gap: 16px;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
+}
+.button .text {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+.button:hover {
+  background-color: #1A4032;
+  cursor: pointer;
 }
 
 .price {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  -moz-column-gap: 16px;
-       column-gap: 16px;
+  -moz-column-gap: 24px;
+       column-gap: 24px;
 }
 .price .current {
   font-family: "Fraunces", serif;
@@ -107,9 +120,28 @@ body {
   color: #6C7289;
 }
 
-.button .text {
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  color: #FFFFFF;
+@media only screen and (max-width: 650px) {
+  .card {
+    width: 343px;
+    height: 611px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .card .image.container {
+    width: 100%;
+    height: 240px;
+  }
+  .card .content.container {
+    width: 100%;
+    height: 371px;
+    padding: 24px;
+  }
+
+  #main-img {
+    background-image: url(../images/image-product-mobile.jpg);
+  }
+
+  .button {
+    width: 295px;
+  }
 }/*# sourceMappingURL=style.css.map */

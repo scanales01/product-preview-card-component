@@ -20,81 +20,89 @@ body {
 }
 
 .card {
+  cursor: default;
   background-color: $card-bg-color;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 10px;
   width: 600px;
   height: 450px;
+  border-radius: 10px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+
+  .container {
+    width: 50%;
+    height: 100%;
+  }
+
+  .content {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
 }
 
-// preview
-.preview {
-  max-width: 50%;
-  flex-grow: 1;
-}
-
-.preview .product {
+#main-img {
   width: 100%;
   height: 100%;
+  background-size: cover;
+  background-image: url(../images/image-product-desktop.jpg);
 }
 
-// content
-.card > .content {
-  max-width: 50%;
-  flex-grow: 1;
-  padding: 32px;
+.type {
+  @include textType('sans');
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: $primary-light;
+}
+
+.name {
+  @include textType('serif');
+  font-size: 32px;
+  line-height: 32px;
+  color: $primary-dark;
+}
+
+.description {
+  @include textType('sans');
+  font-size: 14px;
+  line-height: 23px;
+  color: $primary-light;
+}
+
+.button {
+  width: 236px;
+  height: 48px;
+  background-color: $accent;
+  border-radius: 8px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 12px;
 
-  .type {
+  .text {
     @include textType('sans');
-    font-size: 12px;
-    line-height: 15px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: $primary-light;
+    color: $card-bg-color;
   }
+}
 
-  .name {
-    @include textType('serif');
-    font-size: 32px;
-    line-height: 32px;
-    color: $primary-dark; 
-  }
-
-  .description {
-    @include textType('sans');
-    font-size: 14px;
-    line-height: 23px;
-    color: $primary-light;
-  }
-
-  .button {
-    width: 236px;
-    height: 48px;
-    background-color: $accent;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    column-gap: 16px;
-  }
+.button:hover {
+  background-color: $accent-dark;
+  cursor: pointer;
 }
 
 .price {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  column-gap: 16px;
+  column-gap: 24px;
 
   .current {
     @include textType('serif');
@@ -112,8 +120,30 @@ body {
   }
 }
 
-// button
-.button .text {
-  @include textType('sans');
-  color: $card-bg-color;
+
+@media only screen and (max-width: 650px) {
+  .card {
+    width: 343px;
+    height: 611px;
+    flex-direction: column;
+    align-items: center;
+
+    .image.container {
+      width: 100%;
+      height: 240px;
+    }
+    .content.container {
+      width: 100%;
+      height: 371px;
+      padding: 24px;
+    }
+  }
+
+  #main-img {
+    background-image: url(../images/image-product-mobile.jpg);
+  }
+
+  .button {
+    width: 295px; 
+  }
 }
